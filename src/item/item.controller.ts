@@ -46,7 +46,7 @@ export class ItemController {
   @Get(':id')
   @ApiOkResponse()
   @ApiNotFoundResponse()
-  async findOne(@Param('id') id: string) {
+  async findOne(@Param('id', ParseUUIDPipe) id: string) {
     const item = await this.itemService.findOne(id);
     if (!item) {
       throw new NotFoundException();
