@@ -8,6 +8,6 @@ export class Item {
   @Column()
   title: string;
 
-  @Column()
+  @Column('boolean', { default: false })
   done: boolean;
 }
