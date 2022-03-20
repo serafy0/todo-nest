@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ItemModule } from './item/item.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Item } from './item/entities/item.entity';
 @Module({
   imports: [
     ItemModule,
@@ -15,7 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [],
+      entities: [Item],
       synchronize: true,
     }),
   ],
